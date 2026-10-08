@@ -1,0 +1,16 @@
+[package]
+name = "linux-player"
+version = "0.1.0"
+edition = "2024"
+description = "A minimal Linux terminal music player written in Rust"
+readme = "README.md"
+keywords = ["audio", "player", "tui", "music"]
+categories = ["multimedia::audio"]
+
+[dependencies]
+# Decoding: demux + decode MP3 / FLAC / WAV / OGG into raw PCM.
+symphonia = { version = "0.5", features = ["all"] }
+# Output: hands the decoded PCM to the system default audio device.
+cpal = "0.18"
+# Error handling: context rich, non-panicking error propagation.
+anyhow = "1"
